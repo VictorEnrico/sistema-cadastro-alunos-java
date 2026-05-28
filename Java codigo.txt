@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+
+public class Main {
+
+    // Questão 01
+    public static String verificarSituacao(double nota) {
+        if (nota >= 6) {
+            return "Aprovado";
+        } else if (nota >= 4 && nota < 6) {
+            return "Recuperação";
+        } else {
+            return "Reprovado";
+        }
+    }
+
+    // Questão 02
+    public static void listarAprovados(ArrayList<Double> notas) {
+        int contador = 0;
+
+        System.out.println("\nNotas aprovadas (>= 7):");
+
+        for (double nota : notas) {
+            if (nota >= 7) {
+                System.out.println(nota);
+                contador++;
+            }
+        }
+
+        System.out.println("Quantidade de aprovados: " + contador);
+    }
+
+    public static void main(String[] args) {
+
+        ArrayList<Double> notas = new ArrayList<>();
+
+        // Valores para teste
+        notas.add(8.0);
+        notas.add(5.5);
+        notas.add(7.2);
+        notas.add(4.0);
+
+        // Testando verificarSituacao
+        System.out.println("Situação de cada aluno:");
+        for (double nota : notas) {
+            System.out.println("Nota: " + nota + " -> " + verificarSituacao(nota));
+        }
+
+        // Testando listarAprovados
+        listarAprovados(notas);
+    }
+}
